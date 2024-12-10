@@ -1,0 +1,26 @@
+{% extends 'app_principal/base.html' %}
+{% block content %}
+<h2>Lista de Libros</h2>
+{% if libros %}
+    <table>
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Autor</th>
+                <th>Fecha de Publicación</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for libro in libros %}
+            <tr>
+                <td>{{ libro.titulo }}</td>
+                <td>{{ libro.autor }}</td>
+                <td>{{ libro.fecha_publicacion }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>No hay libros registrados.</p>
+{% endif %}
+{% endblock %}
